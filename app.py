@@ -10,6 +10,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -19,10 +20,10 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route("/chew_tasks")
-def chew_tasks():
-    chew_tasks = mongo.db.chew_tasks.find()
-    return render_template("tasks.html", chew_tasks=chew_tasks)
+@app.route("/get_tasks")
+def get_tasks():
+    tasks = mongo.db.chew_tasks.find()
+    return render_template("tasks.html", chew_tasks=tasks)
 
 
 if __name__ == '__main__':
