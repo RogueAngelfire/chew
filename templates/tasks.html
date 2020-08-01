@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
-    <title>Chew Manager</title>
-</head>
-<body>
-<h1> No Errors just link issues </h1>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2> Im extending the base template </h2>
     {% for task in tasks %}
         {{ task.category_food_name }}<br>
         {{ task.add_img}}<br>
@@ -20,5 +15,5 @@
         {{ task.fats }}<br>
         {{ task.sugars }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
