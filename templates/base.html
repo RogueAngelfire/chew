@@ -13,6 +13,28 @@
 </head>
 <body>
 
+	<header>
+        <!-- Desktop Navigation -->
+		<nav class="nav-extended text-shadow light-green">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Logo</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Contribute Recipie</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	
+        <!-- mobile navigation -->
+		<ul class="sidenav" id="mobile-demo">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Contribute Recipie</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</header>
+
     <h1>I'm part of the Chew base template!</h1>
     {% block content %}
     {% endblock %}
