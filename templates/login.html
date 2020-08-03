@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Register to Start Submitting Recipies to Chew</h3>
+<h3 class="center-align">Login to Chew</h3>
 
 <div class="row">
-	<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register')}}">
+	<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
 		<div class="card-panel">
             <!-- Username Field -->
 			<div class="row">
 				<div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-green-text"></i>
+						<i class="fas fa-user-cog prefix light-green-text"></i>
 						<input id="Username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="Username">Username</label>
 					</div>
@@ -23,10 +23,10 @@
 					<input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 					<label for="password">Password</label>
 				</div>
-                <!-- Register Button -->
+                <!-- login Button -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large light-green text-shadow">
-                        Register to Chew <i class="fas fa-sign-in-alt"></i>
+                        Login to Chew <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
 			</div>
@@ -36,7 +36,7 @@
 <div class="row">
     <div class="col s12">
         <p class="center-align">
-            Already registered to Chew? <a href="{{ url_for('login') }}" class="light-green.text">Log In to Chew</a>
+            Not yet registered to Chew? <a href="{{ url_for('register') }}" class="light-green.text">Register Chew Account</a>
         </p>
     </div>
 </div>
