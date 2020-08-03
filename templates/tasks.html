@@ -2,9 +2,10 @@
 {% block content %}
 
     <h2> Im extending the base template </h2>
-    {% for task in tasks %}
+    
+        {% for task in tasks %}
         {{ task.category_food_name }}<br>
-        {{ task.add_img}}<br>
+        {{ task.add_image}}<br>
         {{ task.user_id }}<br>
         {{ task.ingredients }}<br>
         {{ task.method }}<br>
@@ -17,18 +18,18 @@
     {% endfor %}
 
 <ul class="collapsible">
+    {% for task in tasks %}
     <li>
-      <div class="collapsible-header white-text light-green text-shadow"><i class="fas fa-caret-down"></i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header white-text light-green text-shadow">
+           <i class="fas fa-caret-down"></i>
+           <strong>{{ task.category_food_name }} Food Name</strong>
+      </div>
+      <div class="collapsible-body">
+          <strong>{{ task.add_imgage }}</strong>
+          <p>{{ task.add_imgage  }}</p>
+      </div>
     </li>
-    <li>
-      <div class="collapsible-header white-text light-green text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header white-text light-green text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    {% endfor %}
   </ul>
 
 {% endblock %}
