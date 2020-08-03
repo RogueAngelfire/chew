@@ -11,3 +11,7 @@ body {
 .brand-logo {
     font-family: Lobster;
 }
+
+.flashes h4 {
+    line-height: 2;
+}

@@ -25,6 +25,7 @@
 					<li><a href="#">Contact</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                     <li><a href="#">Login</a></li><!-- <i class="fas fa-user"</i> Find a way to add correctly 03/08/20 -->
+                    <li><a href="#">Logout</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -37,10 +38,25 @@
 			<li><a href="#">Contact</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
 		</ul>
 	</header>
 
-    <h1>I'm part of the Chew base template!</h1>
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+               {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="light-green center-align">{{ message }}</h4>
+                    </div>
+               {% endfor %}
+            {% endif %}
+        {% endwith %}   
+    </section>
+
+
+    <main class ="container">
     {% block content %}
     {% endblock %}
 
