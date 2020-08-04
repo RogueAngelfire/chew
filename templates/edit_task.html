@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block content %}
 
-<h3 class="light-green-text center-align">Add Recipie</h3>
+<h3 class="light-green-text center-align">Edit Recipie</h3>
 <!-- Recipie Name -->
 <div class="row card-panel grey lighten-5">
-  <form class="col s12" method="POST" action="{{ url_for('add_task')}}">
+  <form class="col s12" method="POST" action="{{ url_for('edit_task', task_id=task.id) }}">
     <div class="row">
       <div class="input-field col s12">
       <i class="fas fa-folder-open prefix light-green-text"></i>
@@ -163,7 +163,7 @@
     <div class="row">
       <div class="col s12 center-align">
         <button type="submit" class="btn-large light-green text-shadow">
-          Submit Recipie <i class="fas fa-plus-square right"></i>
+          Edit Recipie <i class="fas fa-edit right"></i>
         </button>
       </div>
     </div>
