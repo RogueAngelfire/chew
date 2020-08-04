@@ -8,9 +8,13 @@
       <div class="input-field col s12">
       <i class="fas fa-folder-open prefix light-green-text"></i>
         <select id="menu_categories" name="menu_categories" class="validate" required>
-          <option value="" disabled selected>Choose Meal Category</option>
+          <option value="" disabled>Choose Meal Category</option>
           {% for category in categories %}
-              <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>
+              {% if category.category_name == task.category_name %}
+                  <option value="{{ category.menu_item }}" selected>{{ category.menu_item }}</option>
+              {% else %}
+                  <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>
+              {% endif %}
           {% endfor %}
         </select>
         <label for="menu_categories">Select Breakfast, Lunch or Dinner</label>
@@ -24,6 +28,7 @@
           name="menu_name"
           minlength="5"
           maxlength="50"
+          value="{{ task.task_name }}"
           type="text"
           class="validate"
           required
@@ -162,6 +167,10 @@
     <!-- Submit Menu Button -->
     <div class="row">
       <div class="col s12 center-align">
+        <!-- Cancel Button -->
+        <a href="{{ url_for('get_tasks') }}" class="btn-large orange">
+            Cancel <i class="fas fa-times-circle right"></i>
+        </a>
         <button type="submit" class="btn-large light-green text-shadow">
           Edit Recipie <i class="fas fa-edit right"></i>
         </button>
