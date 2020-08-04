@@ -15,3 +15,9 @@ body {
 .flashes h4 {
     line-height: 2;
 }
+
+/* issues with this not working
+nav.brand-logo {
+    padding: 20px;
+    font-size: 3.1rem;
+} */

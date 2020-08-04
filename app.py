@@ -100,8 +100,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_task")
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+    if request.method == "POST":
+        task = {
+            "menu_name": request.form.get("menu_name"),
+            "add_image": request.form.get("add_image"),
+            "submitted_by": session["user"],
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "protein": request.form.get("protein"),
+            "carbs": request.form.get("carbs"),
+            "fats": request.form.get("fats"),
+            "sugars": request.form.get("sugars"),
+        } 
+        mono.db.chew_tasks.insert_one(task)
+        flash("Recipie Successfully Added")
+        return redirect(url_for("get_tasks"))
+
     categories = mongo.db.menu_categories.find().sort("menu_item", 1)
     return render_template("add_task.html", categories=categories)
 

@@ -1,21 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2> Im extending the base template </h2>
-    
-        {% for task in tasks %}
-        {{ task.category_food_name }}<br>
-        {{ task.add_image}}<br>
-        {{ task.user_id }}<br>
-        {{ task.ingredients }}<br>
-        {{ task.method }}<br>
-        {{ task.protein }}<br>
-        {{ task.carbs }}<br>
-        {{ task.protein }}<br>
-        {{ task.carbs }}<br>
-        {{ task.fats }}<br>
-        {{ task.sugars }}<br>
-    {% endfor %}
+    <h2> This needs to be View Recipie Page </h2>
 
 <ul class="collapsible">
     {% for task in tasks %}
@@ -27,6 +13,7 @@
       <div class="collapsible-body">
           <strong>{{ task.add_imgage }}</strong>
           <p>{{ task.add_imgage  }}</p>
+          <p><em>by: {{ task.created_by }}</em></p>
       </div>
     </li>
     {% endfor %}
