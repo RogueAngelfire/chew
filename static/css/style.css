@@ -16,6 +16,19 @@ body {
     line-height: 2;
 }
 
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #8bc24b;
+}
+
+.btn-small {
+    margin: 5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;
+}
+
 /* issues with this not working
 nav.brand-logo {
     padding: 20px;
