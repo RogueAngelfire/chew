@@ -114,7 +114,7 @@ def add_task():
             "fats": request.form.get("fats"),
             "sugars": request.form.get("sugars"),
         } 
-        mono.db.chew_tasks.insert_one(task)
+        mongo.db.chew_tasks.insert_one(task)
         flash("Recipie Successfully Added")
         return redirect(url_for("get_tasks"))
 
@@ -124,9 +124,31 @@ def add_task():
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
+    if request.method == "POST":
+        submit = {
+            "menu_name": request.form.get("menu_name"),
+            "add_image": request.form.get("add_image"),
+            "submitted_by": session["user"],
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "protein": request.form.get("protein"),
+            "carbs": request.form.get("carbs"),
+            "fats": request.form.get("fats"),
+            "sugars": request.form.get("sugars"),
+        } 
+        mongo.db.chew_tasks.update({"_id": objectId(task_id)}, submit)
+        flash("Recipie Successfully Updated")
+        
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.menu_categories.find().sort("menu_item", 1)
     return render_template("edit_task.html", task=task, categories=categories)
+
+
+@app.route("/delete_task/<task_id>")
+def delete_task(task_id):
+    mongo.db.task.remove({"_id": objectId(taskId)})
+    flash("Recipie Removed Successfully")
+    return redirect(url_for("get_tasks"))
 
 
 if __name__ == "__main__":
