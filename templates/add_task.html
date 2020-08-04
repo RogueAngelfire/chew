@@ -8,15 +8,84 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="fas fa-utensils prefix light-green-text"></i>
-				<input id="icon_prefix" type="text" class="validate">
-				<label for="icon_prefix">Food Name</label>
-			</div>
-			<div class="input-field col s12">
-				<i class="fas fa-hamburger prefix light-green-text"></i>
-				<input id="icon_telephone" type="tel" class="validate">
-				<label for="icon_telephone">Ingredients</label>
+				<input id="menu_name" name="menu_name" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
+				<label for="menu_name">Menu Name</label>
 			</div>
 		</div>
+        
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-image prefix light-green-text"></i>
+				<input id="add_image" name="add_image" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
+				<label for="add_image">Submit Recipie Image</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-user prefix light-green-text"></i>
+				<input id="user_id" name="user_id" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
+				<label for="user_id">Submitted by</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-list-ul prefix light-green-text"></i>
+				<input id="ingredients" name="ingredients" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
+				<label for="ingredients">Ingredients</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-list-ol prefix light-green-text"></i>
+				<input id="method" name="method" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
+				<label for="method">Method</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-drumstick-bite prefix light-green-text"></i>
+				<input id="protein" name="protein" min="0" max="100"
+                    type="number" class="validate" required>
+				<label for="protein">Protein %</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-carrot prefix light-green-text"></i>
+				<input id="carbs" name="carbs" min="0" max="100"
+                    type="number" class="validate" required>
+				<label for="carbs">Carbohydrates %</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-hamburger prefix light-green-text"></i>
+				<input id="fats" name="fats" min="0" max="100"
+                    type="number" class="validate" required>
+				<label for="fats">Fats %</label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-cookie-bite prefix light-green-text"></i>
+				<input id="sugars" name="fats" min="0" max="100"
+                    type="number" class="validate" required>
+				<label for="sugars">Sugars %</label>
+			</div>
+		</div>
+
 	</form>
 </div>
 
