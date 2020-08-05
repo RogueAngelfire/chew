@@ -1,173 +1,101 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 
 <h3 class="light-green-text center-align">Add Recipie</h3>
 <!-- Recipie Name -->
 <div class="row card-panel grey lighten-5">
-  <form class="col s12" method="POST" action="{{ url_for('add_task')}}">
-    <div class="row">
-      <div class="input-field col s12">
-      <i class="fas fa-folder-open prefix light-green-text"></i>
-        <select id="menu_categories" name="menu_categories" class="validate" required>
-          <option value="" disabled selected>Choose Meal Category</option>
-          {% for category in categories %}
-              <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>
-          {% endfor %}
-        </select>
-        <label for="menu_categories">Select Breakfast, Lunch or Dinner</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-utensils prefix light-green-text"></i>
-        <input
-          id="menu_name"
-          name="menu_name"
-          minlength="5"
-          maxlength="50"
-          type="text"
-          class="validate"
-          required
-        />
-        <label for="menu_name">Menu Name</label>
-      </div>
-    </div>
-    <!-- Submit Image of Recipie -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-image prefix light-green-text"></i>
-        <input
-          id="add_image"
-          name="add_image"
-          minlength="5"
-          maxlength="50"
-          type="text"
-          class="validate"
-          required
-        />
-        <label for="add_image">Submit Recipie Image</label>
-      </div>
-    </div>
-    <!-- Name of who submitted recipie more personal to login information -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-user prefix light-green-text"></i>
-        <input
-          id="user_id"
-          name="user_id"
-          minlength="5"
-          maxlength="50"
-          type="text"
-          class="validate"
-          required
-        />
-        <label for="user_id">Submitted by</label>
-      </div>
-    </div>
-    <!-- Ingredients -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-list-ul prefix light-green-text"></i>
-        <input
-          id="ingredients"
-          name="ingredients"
-          minlength="5"
-          maxlength="50"
-          type="text"
-          class="validate"
-          required
-        />
-        <label for="ingredients">Ingredients</label>
-      </div>
-    </div>
-    <!-- Recipie Method -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-list-ol prefix light-green-text"></i>
-        <input
-          id="method"
-          name="method"
-          minlength="5"
-          maxlength="50"
-          type="text"
-          class="validate"
-          required
-        />
-        <label for="method">Method</label>
-      </div>
-    </div>
-    <!-- Protein % -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-drumstick-bite prefix light-green-text"></i>
-        <input
-          id="protein"
-          name="protein"
-          min="0"
-          max="100"
-          type="number"
-          class="validate"
-          required
-        />
-        <label for="protein">Protein %</label>
-      </div>
-    </div>
-    <!-- Carbohydrates % -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-carrot prefix light-green-text"></i>
-        <input
-          id="carbs"
-          name="carbs"
-          min="0"
-          max="100"
-          type="number"
-          class="validate"
-          required
-        />
-        <label for="carbs">Carbohydrates %</label>
-      </div>
-    </div>
-    <!-- Fats % -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-hamburger prefix light-green-text"></i>
-        <input
-          id="fats"
-          name="fats"
-          min="0"
-          max="100"
-          type="number"
-          class="validate"
-          required
-        />
-        <label for="fats">Fats %</label>
-      </div>
-    </div>
-    <!-- Sugars % -->
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="fas fa-cookie-bite prefix light-green-text"></i>
-        <input
-          id="sugars"
-          name="fats"
-          min="0"
-          max="100"
-          type="number"
-          class="validate"
-          required
-        />
-        <label for="sugars">Sugars %</label>
-      </div>
-    </div>
-    <!-- Submit Menu Button -->
-    <div class="row">
-      <div class="col s12 center-align">
-        <button type="submit" class="btn-large light-green text-shadow">
-          Submit Recipie <i class="fas fa-plus-square right"></i>
-        </button>
-      </div>
-    </div>
-  </form>
+    <form class="col s12" method="POST" action="{{ url_for('add_task')}}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-green-text"></i>
+                <select id="menu_categories" name="menu_categories" class="validate" required>
+                    <option value="" disabled selected>Choose Meal Category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>
+                    {% endfor %}
+                </select>
+                <label for="menu_categories">Select Breakfast, Lunch or Dinner</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-utensils prefix light-green-text"></i>
+                <input id="menu_name" name="menu_name" minlength="5" maxlength="50" type="text" class="validate" required />
+                <label for="menu_name">Menu Name</label>
+            </div>
+        </div>
+        <!-- Submit Image of Recipie -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-image prefix light-green-text"></i>
+                <input id="add_image" name="add_image" minlength="5" maxlength="1000" type="text" class="validate" required />
+                <label for="add_image">Submit Recipie Image</label>
+            </div>
+        </div>
+        <!-- Name of who submitted recipie more personal to login information -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user prefix light-green-text"></i>
+                <input id="user_id" name="user_id" minlength="5" maxlength="50" type="text" class="validate" required />
+                <label for="user_id">Submitted by</label>
+            </div>
+        </div>
+        <!-- Ingredients -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-list-ul prefix light-green-text"></i>
+                <input id="ingredients" name="ingredients" minlength="5" maxlength="2000" type="text" class="validate" required />
+                <label for="ingredients">Ingredients</label>
+            </div>
+        </div>
+        <!-- Recipie Method -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-list-ol prefix light-green-text"></i>
+                <input id="method" name="method" minlength="5" maxlength="2000" type="text" class="validate" required />
+                <label for="method">Method</label>
+            </div>
+        </div>
+        <!-- Protein % -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-drumstick-bite prefix light-green-text"></i>
+                <input id="protein" name="protein" min="0" max="100" type="number" class="validate" required />
+                <label for="protein">Protein %</label>
+            </div>
+        </div>
+        <!-- Carbohydrates % -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-carrot prefix light-green-text"></i>
+                <input id="carbs" name="carbs" min="0" max="100" type="number" class="validate" required />
+                <label for="carbs">Carbohydrates %</label>
+            </div>
+        </div>
+        <!-- Fats % -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-hamburger prefix light-green-text"></i>
+                <input id="fats" name="fats" min="0" max="100" type="number" class="validate" required />
+                <label for="fats">Fats %</label>
+            </div>
+        </div>
+        <!-- Sugars % -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-cookie-bite prefix light-green-text"></i>
+                <input id="sugars" name="fats" min="0" max="100" type="number" class="validate" required />
+                <label for="sugars">Sugars %</label>
+            </div>
+        </div>
+        <!-- Submit Menu Button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-green text-shadow">Submit Recipie <i class="fas fa-plus-square right"></i></button>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
+

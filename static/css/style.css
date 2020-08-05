@@ -4,12 +4,23 @@ body {
     background-color: ffffff;
 }
 
+/* --------------------------------- Logo/Header */
+
+a.brand-logo {
+    padding-left: 10px;
+    font-size: 3.3rem;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .brand-logo {
     font-family: Lobster;
+}
+
+h3 {
+    text-align: center;
 }
 
 .flashes h4 {
@@ -29,11 +40,19 @@ body {
     line-height: 42px;
 } 
 
+/* --------------------------------- Home page */
+/*
+.carousel-item {
+  max-height: 55vh;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+/* --------------------------------- Footer */
+
 footer.page-footer.grey {
     width: 100%;
-}
-
-a.brand-logo {
-    padding-left: 10px;
-    font-size: 3.3rem;
 }
