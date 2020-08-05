@@ -2,6 +2,9 @@ $(document).ready(function(){
     $(".sidenav").sidenav({edge: "right"});
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
   });
 
   validateMaterializeSelect();

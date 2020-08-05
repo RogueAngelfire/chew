@@ -21,6 +21,16 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def home():
+    return render_template("index.html", page_title="Home")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", page_title="Contact")
+
+
+@app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
     tasks = list(mongo.db.chew_tasks.find())
@@ -106,7 +116,7 @@ def add_task():
         task = {
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
-            "submitted_by": session["user"],
+            "submitted_by": session["users"],
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
             "protein": request.form.get("protein"),
