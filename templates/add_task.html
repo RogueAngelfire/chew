@@ -28,8 +28,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-green-text"></i>
-                <input id="add_image" name="add_image" minlength="5" maxlength="1000" type="text" class="validate" required />
-                <label for="add_image">Submit Recipie Image</label>
+                <input id="add_image" name="add_image" pattern="https://.*" type="url" class="validate" required />
+                <label for="add_image">Recipie Image link</label>
             </div>
         </div>
         <!-- Name of who submitted recipie more personal to login information -->

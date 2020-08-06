@@ -4,22 +4,22 @@ This is the 3rd Milestone Assignment by Robin Collins
 
 ### A website for people to store and share recipies
 
-I like the menus uploaded based on the ingredients provided to identify if the dish is endugent or healthy
+I like the idea of recipes uploaded based on the ingredients provided to identify if the dish is indulgent or healthy
 the selling point for this would be the instant recognition of a graphical Devil/Demon or Angel/Cherub to
 see if the food is healthy or not so healthy (all food better than no food).
 
 I'd like to include a macro pie chart identifying the Proteins, Carbohydrates and fats using the information
-gathered by the Angel or it evil counter part. Agian this will be a visual representation for even sport people
-and athletes to select the best options for themselves.
+gathered by the Angel or its evil counterpart. Again this will be a visual representation for even athletes or bodybuilders
+and select the best options for their fitness goals.
 
-At this early stage of the project my concerns are more to the users who supply their recipies should be in a position
-to be the only people to edit/delete their input. However, I feel this could be a stretch goal for this assignment
-but will protect people creative input and further protect them from malicious intervention from a rival chef or
+At this early stage of the project, my concerns are more to the users who supply their recipes and should be in a position
+to be the only person to edit/delete their input. However, I feel this could be a stretch goal for this assignment
+but will this will protect peoples creative input and further protect them from malicious intervention from a maybe a rival chef or
 just a troll in general.
 
 ### Wireframes
 
-Here are the inital designs made of this website with the idea of simplicity
+Here are the initial designs made of this website with the idea of simplicity.
 
 ![My UX Designs] (https://github.com/RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
 Format: ![https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png](https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
@@ -27,42 +27,39 @@ Format: ![https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png](https:/
 
 ###  UI
 
-For this particular assignment I though a lot harder over my visuals as what I like has generally not
-been received as well as expected. As I decided I was making a recipie based website I knew that I needed
-to reflect a colour associated with food that looks fresh and stands out. Fresh being like fresh produce
+For this particular assignment, I thought a lot harder over my visual design as what I like was not received as well as I expected. As I decided I was making a recipe based website I knew that I needed
+to reflect a colour associated with food that looks fresh and stands out. Fresh being like fresh produce, therefore, using green as like plants and vegetables.
 However, I didn't want to use red of the meat as could be offensive as a colour that can bleed on the screen
-and possibly be dextrimental to an audience as vegetaian and vegan dishes welcome and becoming more popular
-and extremely nice and people not in this category could opt for a healty alternative or just through curiosity.
+and possibly be detrimental to an audience as vegetarian and vegan dishes welcome and becoming more popular
+and have come a long way in 20 years and this could give people the curiosity and could opt for a healthy alternative or just try a new alternative.
 
-I did orignally have a light green then a darker green but chose the subtle colour of a lighter grey as the 
+I did originally have a light green option then I thought a darker green would be better but chose the subtle colour of my first choice then I also went with a lighter grey as the 
 alternate footer colour as this added contrast to the green almost in a sense of country and city where
-again this could reflect into the site suggesting rural and urban foods for example a meal made by forreging
-and another that is a Street Dish.
+again this could reflect into the website suggesting rural and urban foods, for example, a meal made by foraging
+and the another that is a Street Dish.
 
-I like the Idea that when on a Desktop view people can get inspired with the tablet and mobile options there is
-the look and feel of a menu or a cookbook with simplistic but beautifully presented information. This would definatley 
-tick the boxes of being designed with the approach of mobile first due to its responsive design.
+I like the idea that when on a Desktop view people can get inspired with the tablet and mobile options there is
+the look and feel of a menu or a cookbook with simplistic but beautifully presented information. This would tick the boxes of being designed with the approach of mobile-first due to its responsive design.
 
 ### UX
 
-I worked briefly as a trainee chef recently when my photography career was struggling. However, my bosses egos became an
-obstacle in one of my passions I had for 20 years which was a real shame as I've always seen all careers as an extension
-of a family. As there are enough weddings for all photographers to share the wealth and the same applies to chefs cooks
-and web designers. However, there are small pockets of selfishness all around these days. Thats where this idea comes from
-as I have plenty of friends, family and ex colleges very interest in my idea as a long term project.
+I worked briefly as a trainee chef last year when my photography career was struggling. However, my bosses egos became an
+obstacle in one of the passions I had for 20 years which was a real shame as I've always seen all careers as an extension
+of a family. As there are enough weddings for all photographers to share the wealth and the same applies to all chefs, cooks
+and web designers. However, there are small pockets of selfishness all around these days. That's partially where this idea comes from
+as I have plenty of friends, family and ex colleges very interested in my idea as a long term project.
 
-I hoping to have an login area where people can submit their recipies. There will be options for them to place them 
-into categories for example Breakfast, Lunch and Dinner. It workout based on percentage of Proteins, Carbohydrates, fats and
-sugars if the meal is healthy or something for not so healthy but a tasty treat. The information will the be displayed as
-I mention before in the format of a Angel or Demon. This I feel will be the callenge and possible the stretch goal but some
-form macros displayed in a pie chart possible benificial to athletes alike. I actually find this challenge
-daunting and extremely exciting at the same time as has now struck a cord with one of my other passions of exercise and fitness
-which is probaly more important with the unfortunate crisis of 2020.
+I'm hoping to have a login area where people can submit their recipes. There will be options for them to place them into categories for example Breakfast, Lunch and Dinner. It workout based on the percentage of Proteins, Carbohydrates, fats and
+sugars if the meal is healthy or something for not so healthy but a tasty treat. The information will  be displayed as
+I mentioned before in the format of an Angel or Demon. This I feel will be the challenge and possible the stretch goal but some
+form macros displayed in a pie chart possible beneficial to athletes as I mentioned earlier. I find this challenge
+daunting and extremely exciting at the same time as has now struck a chord with one of my other passions of exercise and fitness
+which has become more important with the unfortunate crisis of 2020.
 
-Inputs from users will be protected from malicious possible rivalry as I could potential lose all menus through general vindictivness
-which sadly is the darker side of the benifits of technology.
+Inputs from users will be protected from malicious possible rivalry as I could potentially lose all menus through general vindictiveness
+which sadly is the darker side of the benefits of technology.
 
-The page will feature an add menu option which feature the following mandetory input required to contribute to the Recipies:
+The page will feature an "add" menu option which features the following mandatory input required to contribute to the Recipies:
 
 Select Meal - Breakfast, Lunch and Dinner
 Menu Name
@@ -75,15 +72,15 @@ Carbohydrates
 sugars
 
 I feel more could be added but that might be a stretch goal with so many already.
-A futher stretch goal could feature comments from other users who tried a menu and has improved it
-or turned it into a completely diffent dish entirely. Cooking is probably the only universal thing everyone has some passion.
-My mother says she hates it but is making cakes all the time as cooking has many sub sections.
-Another stretch goal would be to add to Breakfast, Lunch and Dinner a futher Starter, Mains and Dessert.
-The possiblities could be endless with even a amuse bouche and side-orders a possiblity.
+A further stretch goal could feature comments from other users who tried a menu and has improved it
+or turned it into a completely different dish entirely. Cooking is probably the only universal thing everyone has some passion.
+My mother says she hates it but is making cakes all the time as cooking has many subsections.
+Another stretch goal would be to add to Breakfast, Lunch and Dinner a go further with possibly Starter, Mains and Dessert.
+The possibilities could be endless with even a amuse bouche and side-orders a possibility.
 
-For now though I will focus on security with Submit, Edit and Delete - Hopefully with a confirmation that delete was requested.
+For now, though I will focus on security with Submit, Edit and Delete - Hopefully with a confirmation that delete was requested.
 
-
+<!-- Proof Read this far please read through additional text for errors if submitting above -->
 
 ### Features
 
@@ -134,5 +131,5 @@ Heroku
 
 #### Acknowledgements
 
-I have been privileged with the Support and encouragemnet of my mentor Brian Macharia, I salute you Sir. Furthermore,
-I'd like to give a special thank you to Code Institute tutor Tim Nelson for his assistance.
+I have been privileged with the Support and encouragement of my mentor Brian Macharia, I salute you, Sir. Furthermore,
+I'd like to give a special thank you to Code Institute tutor Tim Nelson for his assistance tutoring me for this part of the course.

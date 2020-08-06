@@ -9,27 +9,28 @@
       <div class="collapsible-header white-text light-green text-shadow">
            <div class="col s3">
                 <i class="fas fa-caret-down"></i>
-                {% if session.user|lower == task.created_by|lower %}
-                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small red accent-4">DELETE</a>
-                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small orange accent-4">Edit</a>
-                {% endif %}
+                
            </div>
            <div class="col s9">
 
            </div>
-           {{  task.menu_item }} {{  task.add_image }} <strong>{{ task.menu_name }}</strong> submiited on {{ task.date_submitted}} by {{ task.submitted_by}}
+           {{ task.menu_item }}  <image src="{{ task.add_image }}"> {{ task.menu_name }} submited on {{ task.date_submitted}} by {{ task.submitted_by}} :
            {% if task.vegetarian == "on" %}
                 <i class="fas fa-cheese light-green">Vegetarian</i>
            {% endif %}
            {% if task.vegan == "on" %}
                 <i class="fas fa-leaf light-green">Vegan</i>
            {% endif %}
+           {% if session.user|lower == task.created_by|lower %}
+                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small orange accent-4 ">Edit</a>
+                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small red accent-4 ">DELETE</a>
+                {% endif %}
                 
       </div>
       <div class="collapsible-body">
           <p>{{ task.menu_item }}</p>
           <p>{{ task.menu_name }}</p>
-          <p>{{ task.add_image }}</p>
+          <image src="{{ task.add_image }}" >
           <p>{{ task.submitted_by }}</p>
           <p>{{ task.date_submitted }}</p>
           <p>{{ task.ingredients }}</p>
