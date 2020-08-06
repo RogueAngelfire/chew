@@ -2,12 +2,20 @@ $(document).ready(function(){
     $(".sidenav").sidenav({edge: "right"});
     $('.collapsible').collapsible();
     $('select').formSelect();
-    $('.carousel').carousel(
-        {interval: 2000
-    }) /// Bootstap carousel remove if not used
-    $('.carousel.carousel-slider').carousel({ /// materialize carousel
-    fullWidth: true, duration: 200
+    $('.datepicker').datepicker({
+        format: "dd mmmm, yyyy",
+        yearRange: 1,
+        ShowClearBtn: true,
+        i18n: {
+            done: "Select"
+        }
     });
+    
+    $('.carousel.carousel-slider').carousel({ /// materialize carousel
+    fullWidth: true,
+    duration: 200
+    });
+    
     
   
 

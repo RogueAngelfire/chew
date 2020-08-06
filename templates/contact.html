@@ -10,9 +10,9 @@
                 <div class="col-12">
                     <div class="center-align">
                         <form onsubmit="return sendMail(this);">
-                            <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                            <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
-                            <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Add your message here!" required></textarea>
+                            <input type="text" name="name" id="fullname" minlength="5" maxlength="15" class="form-control" placeholder="Name" pattern="^[a-zA-Z0-9]{5,15}$" required />
+                            <input type="email" name="email" id="emailaddress" minlength="5" maxlength="30" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Email" required />
+                            <textarea rows="5" name="projectsummary" id="projectsummary" minlength="10" maxlength="2000" class="form-control" placeholder="Add your message here!" required></textarea>
                             <div class="form-row text-center">
                                 <div class="col">
                                     <button type="submit" class="btn light-green btn-secondary center-align">Submit Request</button>

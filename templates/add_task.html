@@ -40,6 +40,14 @@
                 <label for="user_id">Submitted by</label>
             </div>
         </div>
+        <!-- Date Submitted dd mm yyyy -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-alt prefix light-green-text"></i>
+                <input id="date_submitted" name="date_submitted" type="text" class=" datepicker validate" required />
+                <label for="date_submitted">Submission Date</label>
+            </div>
+        </div>
         <!-- Ingredients -->
         <div class="row">
             <div class="input-field col s12">
@@ -56,6 +64,32 @@
                 <label for="method">Method</label>
             </div>
         </div>
+        <!-- vegetarian -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-cheese prefix light-green-text"></i>
+                    <label for="vegetarian">
+                        <input type="checkbox" id="vegetarian" name="vegetarian">
+                        <span class="lever"></span>
+                        Vegetarian?
+                    </label>
+                </div>
+            </div>
+            </div>
+        <!-- vegan -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-leaf prefix light-green-text"></i>
+                    <label for="vegan">
+                        <input type="checkbox" id="vegan" name="vegan">
+                        <span class="lever"></span>
+                        Vegan?
+                    </label>
+                </div>
+            </div>
+            </div>
         <!-- Protein % -->
         <div class="row">
             <div class="input-field col s12">
