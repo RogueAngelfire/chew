@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3> Recipies </h3>
+    <h3><strong>Chew</strong> Recipies </h3>
 
 <ul class="collapsible">
     {% for task in tasks %}
@@ -17,11 +17,23 @@
            <div class="col s9">
 
            </div>
-           <strong>{{ task.menu_item }} Recipie</strong>
+           <strong>{{ task.menu_name }} Recipie</strong>
       </div>
       <div class="collapsible-body">
-          <strong>{{ task.add_imgage }}</strong>
-          <p>{{ task.add_imgage  }}</p>
+          <p>{{ task.menu_item }}</p>
+          <p>{{ task.menu_name }}</p>
+          <strong>{{ task.add_image }}</strong> <!--- strong clash with chew brand-->
+          <p>{{ task.submitted_by }}</p>
+          <p>{{ task.date_submitted }}</p>
+          <p>{{ task.ingredients }}</p>
+          <p>{{ task.method }}</p>
+          <p>{{ task.vegetarian }}</p>
+          <p>{{ task.vegan }}</p>
+          <p>{{ task.protein }}</p>
+          <p>{{ task.carbs }}</p>
+          <p>{{ task.fats }}</p>
+          <p>{{ task.sugars }}</p>
+
           <p><em>by: {{ task.created_by }}</em></p>
       </div>
     </li>

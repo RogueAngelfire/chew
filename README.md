@@ -2,7 +2,7 @@
 
 This is the 3rd Milestone Assignment by Robin Collins
 
-### A website for people to store and share menus
+### A website for people to store and share recipies
 
 I like the menus uploaded based on the ingredients provided to identify if the dish is endugent or healthy
 the selling point for this would be the instant recognition of a graphical Devil/Demon or Angel/Cherub to
@@ -21,8 +21,8 @@ just a troll in general.
 
 Here are the inital designs made of this website with the idea of simplicity
 
-![My UX Designs](staic/images/ux/logo.png)
-Format: ![Not Here Look in the ux folder](url)
+![My UX Designs] (https://github.com/RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
+Format: ![https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png](https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
 
 
 ###  UI
@@ -109,7 +109,8 @@ Bootstrap CCS and JS
 Font Awesome
 PyMongo
 Flask-PyMongo
-Dnspython
+bson
+Werkzeug
 
 Database used:
 

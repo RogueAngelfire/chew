@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h3> Chew would like to here from you.</h3>
+<h3> <strong>Chew</strong> would like to here from you.</h3>
 <p> Please feel free to get in touch and well get back to you in a short while</p>
 <!-- insert web form Here -->
 
@@ -8,14 +8,14 @@
         <div class="row bg-color-contact">
             <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div class="col-12">
-                    <div class="align-center">
+                    <div class="center-align">
                         <form onsubmit="return sendMail(this);">
                             <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
                             <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
                             <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Add your message here!" required></textarea>
                             <div class="form-row text-center">
                                 <div class="col">
-                                    <button type="submit" class="btn light-green btn-secondary">Submit Request</button>
+                                    <button type="submit" class="btn light-green btn-secondary center-align">Submit Request</button>
 
                                 </div>
                             </div>
