@@ -8,7 +8,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-green-text"></i>
-                <select id="menu_categories" name="menu_categories" class="validate" required>
+                <select id="menu_item" name="menu_item" class="validate" required>
                     <option value="" disabled selected>Choose Meal Category</option>
                     {% for category in categories %}
                     <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>

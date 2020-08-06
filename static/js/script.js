@@ -10,14 +10,14 @@ $(document).ready(function(){
             done: "Select"
         }
     });
-    
+
     $('.carousel.carousel-slider').carousel({ /// materialize carousel
     fullWidth: true,
     duration: 200
     });
     
     
-  
+  /// materialise javascript for validation
 
   validateMaterializeSelect();
   function validateMaterializeSelect() {

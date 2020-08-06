@@ -3,9 +3,11 @@
 body {
     background-color: ffffff;
     font-family: Roboto;
+    width: 100%;
+    
 }
 
-/* --------------------------------- Logo/Header */
+/* --------------------------------- Navigation */
 
 a.brand-logo {
     padding-left: 10px;
@@ -23,6 +25,8 @@ a.brand-logo {
 h3 {
     text-align: center;
 }
+
+/* --------------------------------- Logos */
 
 strong {
     font-family: Lobster;
@@ -47,14 +51,9 @@ strong {
 
 /* --------------------------------- Home page */
 /*
-.carousel-item {
-  max-height: 55vh;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
+a.carousel-item.active {
+  width: 100%
+}*/ 
 
 
 /* --------------------------------- Switch controls */
