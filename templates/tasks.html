@@ -14,35 +14,41 @@
            <div class="col s9">
 
            </div>
-           {{ task.menu_item }}  <image src="{{ task.add_image }}"> {{ task.menu_name }} submited on {{ task.date_submitted}} by {{ task.submitted_by}} :
-           {% if task.vegetarian == "on" %}
-                <i class="fas fa-cheese light-green">Vegetarian</i>
+           {{ task.menu_item }}  <image src="{{ task.add_image }}"> : {{ task.menu_name }} - submited on {{ task.date_submitted}} by {{ task.submitted_by}} :
+           {% if task.vegetarian == "on" %} 
+               <i class="fas fa-cheese light-green"></i>
            {% endif %}
            {% if task.vegan == "on" %}
-                <i class="fas fa-leaf light-green">Vegan</i>
+                <i class="fas fa-leaf light-green"></i>
            {% endif %}
-           {% if session.user|lower == task.created_by|lower %}
-                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small orange accent-4 ">Edit</a>
-                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small red accent-4 ">DELETE</a>
-                {% endif %}
+           
                 
       </div>
       <div class="collapsible-body">
           <p>{{ task.menu_item }}</p>
-          <p>{{ task.menu_name }}</p>
+          <p>Recipie: {{ task.menu_name }}</p>
           <image src="{{ task.add_image }}" >
-          <p>{{ task.submitted_by }}</p>
-          <p>{{ task.date_submitted }}</p>
-          <p>{{ task.ingredients }}</p>
-          <p>{{ task.method }}</p>
-          <p>{{ task.vegetarian }}</p>
-          <p>{{ task.vegan }}</p>
-          <p>{{ task.protein }}</p>
-          <p>{{ task.carbs }}</p>
-          <p>{{ task.fats }}</p>
-          <p>{{ task.sugars }}</p>
+          <p>Author: {{ task.submitted_by }}</p>
+          <p>Date Submitted: {{ task.date_submitted }}</p>
+          <p>Ingredients: {{ task.ingredients }}</p>
+          <p>Method: {{ task.method }}</p>
+          <p>Vegetarian when Icon Showing {% if task.vegetarian == "on" %}
+                <i class="fas fa-cheese light-green-text">Vegetarian</i>
+           {% endif %}</p>
+          <p>Vegan when Icon Showing {% if task.vegan == "on" %}
+                <i class="fas fa-leaf light-green">Vegan</i>
+           {% endif %}</p>
+          <p>Protein: {{ task.protein }}%</p>
+          <p>Carbohydrate: {{ task.carbs }}%</p>
+          <p>Fats: {{ task.fats }}%</p>
+          <p>Sugars: {{ task.sugars }}%</p>
 
-          <p><em>by: {{ task.created_by }}</em></p>
+          <p><em>username: {{ task.created_by }} </em></p>
+
+          {% if session.user|lower == task.created_by|lower %}
+                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small orange accent-4 ">Edit</a>
+                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small red accent-4 ">DELETE</a>
+                {% endif %}
       </div>
     </li>
     {% endfor %}
