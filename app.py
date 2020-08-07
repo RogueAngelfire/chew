@@ -113,12 +113,17 @@ def logout():
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
+        vegetarian = "on" if request.form.get("is_urgent") else "off"
+        vegan = "on" if request.form.get("is_urgent") else "off"
         task = {
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
             "submitted_by": session["users"],
+            "date_submitted": request.form.get("date_submitted"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
+            "vegetarian": vegetarian,
+            "vegan": vegan,
             "protein": request.form.get("protein"),
             "carbs": request.form.get("carbs"),
             "fats": request.form.get("fats"),
@@ -135,12 +140,17 @@ def add_task():
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
     if request.method == "POST":
+        vegetarian = "on" if request.form.get("is_urgent") else "off"
+        vegan = "on" if request.form.get("is_urgent") else "off"
         submit = {
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
             "submitted_by": session["user"],
+            "date_submitted": request.form.get("date_submitted"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
+            "vegetarian": vegetarian,
+            "vegan": vegan,
             "protein": request.form.get("protein"),
             "carbs": request.form.get("carbs"),
             "fats": request.form.get("fats"),
