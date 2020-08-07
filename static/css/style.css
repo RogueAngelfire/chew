@@ -51,10 +51,10 @@ strong {
 } 
 
 /* --------------------------------- Home page */
-/*
+/
 a.carousel-item.active {
-  width: 100%
-}*/ 
+  width: 100%;
+} 
 
 
 /* --------------------------------- Switch controls */
@@ -62,10 +62,27 @@ a.carousel-item.active {
 .switch {
     color: #8bc24b;
 } 
-/*
+*/
+
+img {
+    width: 50px;
+    height: auto;
+}
+
+/* --------------------------------- Picture Links */
+
+.images {
+    border-width: 2px;
+    border-color:#8bc24b;
+    width: 200px;
+    height: auto;
+}
 
 /* --------------------------------- Footer */
-
-footer.page-footer.grey {
+/*
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-}
+} */ 

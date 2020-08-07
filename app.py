@@ -116,9 +116,10 @@ def add_task():
         vegetarian = "on" if request.form.get("is_urgent") else "off"
         vegan = "on" if request.form.get("is_urgent") else "off"
         task = {
+            "menu_item": request.form.get("menu_item"),
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
-            "submitted_by": session["users"],
+            "submitted_by": session["user"],
             "date_submitted": request.form.get("date_submitted"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
@@ -133,7 +134,7 @@ def add_task():
         flash("Recipie Successfully Added")
         return redirect(url_for("get_tasks"))
 
-    categories = mongo.db.menu_categories.find().sort("menu_item", 1)
+    categories = mongo.db.menu_categories.find().sort("menu_category_name", 1)
     return render_template("add_task.html", categories=categories)
 
 
@@ -143,6 +144,7 @@ def edit_task(task_id):
         vegetarian = "on" if request.form.get("is_urgent") else "off"
         vegan = "on" if request.form.get("is_urgent") else "off"
         submit = {
+            "menu_item": request.form.get("menu_item"),
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
             "submitted_by": session["user"],

@@ -14,7 +14,7 @@
            <div class="col s9">
 
            </div>
-           {{ task.menu_item }}  <image src="{{ task.add_image }}"> : {{ task.menu_name }} - submited on {{ task.date_submitted}} by {{ task.submitted_by}} :
+           <image src="{{ task.add_image }}"> : {{ task.menu_item }}  : {{ task.menu_name }} - submited on {{ task.date_submitted}} by {{ task.submitted_by}} :
            {% if task.vegetarian == "on" %} 
                <i class="fas fa-cheese light-green"></i>
            {% endif %}
@@ -27,7 +27,7 @@
       <div class="collapsible-body">
           <p>{{ task.menu_item }}</p>
           <p>Recipie: {{ task.menu_name }}</p>
-          <image src="{{ task.add_image }}" >
+          <image src="{{ task.add_image }}" class="images">
           <p>Author: {{ task.submitted_by }}</p>
           <p>Date Submitted: {{ task.date_submitted }}</p>
           <p>Ingredients: {{ task.ingredients }}</p>
@@ -36,7 +36,7 @@
                 <i class="fas fa-cheese light-green-text">Vegetarian</i>
            {% endif %}</p>
           <p>Vegan when Icon Showing {% if task.vegan == "on" %}
-                <i class="fas fa-leaf light-green">Vegan</i>
+                <i class="fas fa-leaf light-green-text">Vegan</i>
            {% endif %}</p>
           <p>Protein: {{ task.protein }}%</p>
           <p>Carbohydrate: {{ task.carbs }}%</p>

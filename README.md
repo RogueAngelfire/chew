@@ -21,9 +21,9 @@ just a troll in general.
 
 Here are the initial designs made of this website with the idea of simplicity.
 
-![My UX Designs] (https://github.com/RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
-Format: ![https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png](https://RogueAngelfire/chew/staic/images/ux/Chew_design_1.png)
+https://github.com/RogueAngelfire/chew/blob/be80a7f03f60fe1fdd8c2ed8da530c40294cc18d/static/images/ux/Chew_design_1.png
 
+This is a large image which can be scrolled across revealling the page layout with mobile and tablet design including desktop views.
 
 ###  UI
 
@@ -84,6 +84,20 @@ For now, though I will focus on security with Submit, Edit and Delete - Hopefull
 
 ### Features
 
+### Design
+
+## Colours
+
+- #8bc24b This Green is used on the Navigation and also with the header settings.
+white and black are my alternate colours with greys on the forms.
+
+I also used a grey footer.
+
+## Fonts
+
+I picked Lobster font for the Chew logo it works really well I think, simple and effective.
+The other font was Roboto as I wanted to stick with it from previous project for its popularity and my continuity.
+
 #### Exsisting Features
 
 
@@ -91,34 +105,49 @@ For now, though I will focus on security with Submit, Edit and Delete - Hopefull
 
 ### Technologies Used
 
-For this assignment I used the following languages:
+- Balsamiq for my Wireframes.
+- Bootstrap was used for testing mainly.
+- Materialize for the majority of my frameworks.
+- Font Awesome has been implimented for all my icons.
+- Github was used as hosting service.
+- GitPod for where I carried out all my coding.
+- Heroku is what I used to deploy this app which is a container-based cloud platform service.
+- Unsplash is where I obtained my images from when I worked out I couldn't submit mine to MongoDB which brings me to
+- MongoDB an amazing database website.
+-
+-
+
+# For this assignment I used the following languages:
 
 HTML5
 CSS3
 Javascript
 Python3
 
-The Libraries used were as follows:
+# The Libraries used were as follows:
 
-Flask
-jQuery
-Bootstrap CCS and JS
-Font Awesome
-PyMongo
-Flask-PyMongo
-bson
-Werkzeug
+- Flask
+- jQuery
+- Bootstrap CCS and JS
+- Font Awesome
+- PyMongo
+- Flask
+- PyMongo
+- bson
+- Werkzeug
 
-Database used:
+## Database used:
 
-MongoDB
+- MongoDB
 
-For Hosting I used:
+## For Hosting I used:
 
-Github
-Heroku
+- Github
+- Heroku
 
 ### Testing
+
+Used Google Developers tools
 
 ### Deployment
 
