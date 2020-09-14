@@ -113,6 +113,8 @@ def logout():
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
+        ingredients = request.form.get("ingredients").splitlines()
+        method = request.form.get("method").splitlines()
         vegetarian = "on" if request.form.get("is_urgent") else "off"
         vegan = "on" if request.form.get("is_urgent") else "off"
         task = {
@@ -121,15 +123,17 @@ def add_task():
             "add_image": request.form.get("add_image"),
             "submitted_by": session["user"],
             "date_submitted": request.form.get("date_submitted"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
+            "ingredients": ingredients,
+            "method": method,
             "vegetarian": vegetarian,
             "vegan": vegan,
             "protein": request.form.get("protein"),
             "carbs": request.form.get("carbs"),
             "fats": request.form.get("fats"),
             "sugars": request.form.get("sugars"),
-        } 
+            "created_by": request.form.get("created_by"),
+            }
+
         mongo.db.chew_tasks.insert_one(task)
         flash("Recipie Successfully Added")
         return redirect(url_for("get_tasks"))
@@ -147,7 +151,7 @@ def edit_task(task_id):
             "menu_item": request.form.get("menu_item"),
             "menu_name": request.form.get("menu_name"),
             "add_image": request.form.get("add_image"),
-            "submitted_by": session["user"],
+            "submitted_by": request.form.get("submitted_by"),
             "date_submitted": request.form.get("date_submitted"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
@@ -157,11 +161,12 @@ def edit_task(task_id):
             "carbs": request.form.get("carbs"),
             "fats": request.form.get("fats"),
             "sugars": request.form.get("sugars"),
-        } 
-        mongo.db.chew_tasks.update({"_id": objectId(task_id)}, submit)
+            "created_by": session["user"],
+        }
+        mongo.db.chew_tasks.update({"_id": ObjectId(task_id)}, submit)
         flash("Recipie Successfully Updated")
-        
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+
+    task = mongo.db.chew_tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.menu_categories.find().sort("menu_item", 1)
     return render_template("edit_task.html", task=task, categories=categories)
 
@@ -176,4 +181,4 @@ def delete_task(task_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

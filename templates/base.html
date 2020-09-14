@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" 
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
-    <link rel="icon" href="static/images/favicon/icon.png">
-    {% block styles %}
-    {% endblock %}
-    <title>Chew</title>
-</head>
-<body>
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+	<link rel="icon" href="static/images/favicon/icon.png">
+	{% block styles %}
+	{% endblock %}
+	<title>Chew</title>
+</head>
+
+<body>
 	<header>
-        <!-- Desktop Navigation -->
+		<!-- Desktop Navigation -->
 		<nav class="nav-extended text-shadow light-green">
 			<div class="nav-wrapper">
 				<a href="{{url_for('home')}}" class="brand-logo">Chew</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					    <li><a href="{{url_for('home')}}">Home</a></li>
-                        <li><a href="{{ url_for('get_tasks') }}">View Recipies</a></li>
-					    <li><a href="{{url_for('contact') }}">Contact</a></li>
-                    {% if session.user %}
+					<li><a href="{{url_for('home')}}">Home</a></li>
+					<li><a href="{{ url_for('get_tasks') }}">View Recipes</a></li>
+					<li><a href="{{url_for('contact') }}">Contact</a></li>
+					{% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_task') }}">Submit Recipie</a></li> 
+                        <li><a href="{{ url_for('add_task') }}">Submit Recipe</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    {% else %}
+					{% else %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
-                </ul>
+					{% endif %}
+				</ul>
 			</div>
 		</nav>
-	
-        <!-- mobile navigation -->
+		<!-- mobile navigation -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align.light-green.text-darken-4">Chew</h4></li>
+			<li><h4 class="center-align.light-green.text-darken-4">Chew</h4></li>
 			<li><a href="{{url_for('home')}}">Home</a></li>
-            <li><a href="{{ url_for('get_tasks') }}">View Recipies</a></li>
-					    <li><a href="{{url_for('contact') }}">Contact</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('add_task') }}">Submit Recipie</a></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
+			<li><a href="{{ url_for('get_tasks') }}">View Recipies</a></li>
+			<li><a href="{{url_for('contact') }}">Contact</a></li>
+			{% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('add_task') }}">Submit Recipe</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+			{% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+			{% endif %}
 		</ul>
 	</header>
-
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
+	<section>
+		<!-- flash messages -->
+		{% with messages = get_flashed_messages() %}
             {% if messages %}
-               {% for message in messages %}
+                {% for message in messages %}
                     <div class="row flashes">
                         <h4 class="light-green center-align">{{ message }}</h4>
                     </div>
-               {% endfor %}
+                {% endfor %}
             {% endif %}
-        {% endwith %}   
-    </section>
+		{% endwith %}
+	</section>
+	<main class="container">
+		{% block content %}
+		{% endblock %}
+	</main>
 
+	<!-- footer-->
+	<footer class="page-footer grey">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<h5>About <strong>Chew</strong></h5>
+					<p>
+						<strong>Chew</strong> is passionate about two things you and food. All over the World, there is
+						a wealth of flavours
+						with new dishes being created and then we still have the old classics and their variations.
+						If you are the same and love food from all over the world come and joins us and welcome to the
+						family
+						of like-minded creating makers, bakers eater and creators.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright grey">
+			<div class="container center-align">&copy; 2020 <strong>Chew</strong> - Live to Eat not Eat to Live.
 
-    <main class ="container">
-    {% block content %}
-    {% endblock %}
+			</div>
+		</div>
+	</footer>
+    
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	{% block scripts %}
+	{% endblock %}
 
-    <!-- footer-->
-   <footer class="page-footer grey">
-        <div class="container">
-           <div class="row">
-             <div class="col s12">
-              <h5>About <strong>Chew</strong></h5>
-               <p> 
-               <strong>Chew</strong> is passionate about two things you and food. All over the World, there is a wealth of flavours
-               with new dishes being created and then we still have the old classics and their variations.
-               If you are the same and love food from all over the world come and joins us and welcome to the family
-               of like-minded creating makers, bakers eater and creators.
-               </p>
-             </div>
-             
-        </div>
-        <div class="footer-copyright grey">
-        <div class="container center-align">&copy; 2020 <strong>Chew</strong> - Live to Eat not Eat to Live.
-        </div>
-        </div>
-    </footer>
-
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
 </body>
+
 </html>

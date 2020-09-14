@@ -51,18 +51,10 @@ strong {
 } 
 
 /* --------------------------------- Home page */
-/
+
 a.carousel-item.active {
   width: 100%;
 } 
-
-
-/* --------------------------------- Switch controls */
-/*
-.switch {
-    color: #8bc24b;
-} 
-*/
 
 img {
     width: 50px;
@@ -79,10 +71,7 @@ img {
 }
 
 /* --------------------------------- Footer */
-/*
+
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
-} */ 
+} 

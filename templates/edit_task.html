@@ -10,11 +10,13 @@
                 <i class="fas fa-folder-open prefix light-green-text"></i>
                 <select id="menu_item" name="menu_item" class="validate" required>
                     <option value="" disabled>Choose Meal Category</option>
-                    {% for category in categories %} {% if category.category_name == task.category_name %}
+                    {% for category in categories %} 
+                        {% if category.category_name == task.category_name %}
                     <option value="{{ category.menu_item }}" selected>{{ category.menu_item }}</option>
-                    {% else %}
+                        {% else %}
                     <option value="{{ category.menu_item }}">{{ category.menu_item }}</option>
-                    {% endif %} {% endfor %}
+                        {% endif %} 
+                    {% endfor %}
                 </select>
                 <label for="menu_categories">Select Breakfast, Lunch or Dinner</label>
             </div>
@@ -22,7 +24,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-utensils prefix light-green-text"></i>
-                <input id="menu_name" name="menu_name" minlength="5" maxlength="50" value="{{ task.task_name }}" type="text" class="validate" required />
+                <input id="menu_name" name="menu_name" minlength="5" maxlength="50"
+                    value="{{ task.menu_name }}" type="text" class="validate" required>
                 <label for="menu_name">Menu Name</label> 
             </div>
         </div>
@@ -30,7 +33,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-green-text"></i>
-                <input id="add_image" name="add_image" pattern="https://.*" type="url" class="validate" required />
+                <input id="add_image" name="add_image" pattern="https://.*" value="{{ task.add_image }}" type="url" class="validate" required>
                 <label for="add_image">Submit Recipie Image</label>
             </div>
         </div>
@@ -38,7 +41,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-user prefix light-green-text"></i>
-                <input id="user_id" name="user_id" minlength="5" maxlength="50" type="text" class="validate" required />
+                <input id="user_id" name="user_id" minlength="5" maxlength="50" value="{{ task.submitted_by }}" type="text" class="validate" required>
                 <label for="user_id">Submitted by</label>
             </div>
         </div>
@@ -46,7 +49,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix light-green-text"></i>
-                <input id="date_submitted" name="date_submitted" type="text" class=" datepicker validate" required />
+                <input id="date_submitted" name="date_submitted" value="{{ task.date_submitted }}" type="text" class=" datepicker validate" required>
                 <label for="date_submitted">Submission Date</label>
             </div>
         </div>
@@ -54,7 +57,10 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-list-ul prefix light-green-text"></i>
-                <textarea id="ingredients" name="ingredients" minlength="5" maxlength="50" type="text" class="materialize-textarea validate" required></textarea>
+                <textarea id="ingredients" name="ingredients" minlength="5" maxlength="50" type="text" class="materialize-textarea validate" required>
+                {% for ingredient in task.ingredients %}
+                {{- ingredient -}}
+                {% endfor %}</textarea>
                 <label for="ingredients">Ingredients</label>
             </div>
         </div>
@@ -62,7 +68,11 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-list-ol prefix light-green-text"></i>
-                <textarea id="method" name="method" minlength="5" maxlength="50" type="text" class="materialize-textarea validate" required></textarea>
+                <textarea id="method" name="method" minlength="5" maxlength="50" type="text" class="materialize-textarea validate" required>
+                {% for method in task.method -%}
+                {{ method }}
+                {% endfor -%}
+                </textarea>
                 <label for="method">Method</label>
             </div>
         </div>
@@ -96,7 +106,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-drumstick-bite prefix light-green-text"></i>
-                <input id="protein" name="protein" min="0" max="100" type="number" class="validate" required />
+                <input id="protein" name="protein" min="0" max="100" value="{{ task.protein }}" type="number" class="validate" required>
                 <label for="protein">Protein %</label>
             </div>
         </div>
@@ -104,7 +114,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-carrot prefix light-green-text"></i>
-                <input id="carbs" name="carbs" min="0" max="100" type="number" class="validate" required />
+                <input id="carbs" name="carbs" min="0" max="100" value="{{ task.carbs }}" type="number" class="validate" required>
                 <label for="carbs">Carbohydrates %</label>
             </div>
         </div>
@@ -112,7 +122,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-hamburger prefix light-green-text"></i>
-                <input id="fats" name="fats" min="0" max="100" type="number" class="validate" required />
+                <input id="fats" name="fats" min="0" max="100" value="{{ task.fats }}" type="number" class="validate" required>
                 <label for="fats">Fats %</label>
             </div>
         </div>
@@ -120,7 +130,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-cookie-bite prefix light-green-text"></i>
-                <input id="sugars" name="fats" min="0" max="100" type="number" class="validate" required />
+                <input id="sugars" name="fats" min="0" max="100" value="{{ task.sugars }}" type="number" class="validate" required>
                 <label for="sugars">Sugars %</label>
             </div>
         </div>
